@@ -53,6 +53,7 @@
     @include bpk-box-shadow-sm;
         display: flex;
     justify-content: center;
+        margin-bottom: $bpk-spacing-lg;
       
   }
 }

@@ -72,8 +72,6 @@ const [selectedDate, setSelectedDate] = useState(null);
 
 
 
-
-
   return (
   <div className={getClassName('App')}>
     <header className={getClassName('App__header')}>
@@ -101,7 +99,7 @@ const [selectedDate, setSelectedDate] = useState(null);
   }}
 />
 </div>
-
+<BpkButton onClick={() => alert('It works!')}>Continue</BpkButton>
     </main>
   </div>
 );
