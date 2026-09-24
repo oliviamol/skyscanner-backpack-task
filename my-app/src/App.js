@@ -70,11 +70,7 @@ const App = () => {
 const [currentMonth, setCurrentMonth] = useState(new Date());
 const [selectedDate, setSelectedDate] = useState(null);
 
-const handleDateSelect = (date) => {
-   setSelectedDate(date);
-  setCurrentMonth(date);
-  
-};
+
 
 
 
@@ -86,22 +82,25 @@ const handleDateSelect = (date) => {
       </div>
     </header>
     <main className={getClassName('App__main')}>
-
-      <BpkCalendar
-        id="calendar"
-        onDateSelect={handleDateSelect}
-        formatMonth={formatMonth}
-        formatDateFull={formatDateFull}
-        daysOfWeek={daysOfWeek}
-        weekStartsOn={1}
-        changeMonthLabel="Change month"
-        nextMonthLabel="Next month"
-        previousMonthLabel="Previous month"
-        selectionConfiguration={{
-          type: CALENDAR_SELECTION_TYPE.single,
-          date: selectedDate,
-        }}
-      />
+<div className={getClassName('App__calendar')}>
+     <BpkCalendar
+  id="flight-schedule-calendar"
+  daysOfWeek={daysOfWeek}
+  weekStartsOn={1}
+  formatDateFull={formatDateFull}
+  formatMonth={formatMonth}
+  changeMonthLabel="Change month"
+  nextMonthLabel="Next month"
+  previousMonthLabel="Previous month"
+  month={currentMonth}
+  onMonthChange={(event, { month }) => setCurrentMonth(month)}
+  onDateSelect={setSelectedDate}
+   selectionConfiguration={{
+    type: CALENDAR_SELECTION_TYPE.single,
+    date: selectedDate,
+  }}
+/>
+</div>
 
     </main>
   </div>
